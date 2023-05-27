@@ -40,22 +40,17 @@
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)bin\$(Configuration)\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\Temp\$(SolutionName)\$(ProjectName)\$(Configuration)\</IntDir>
-    
-    
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)bin\$(Configuration)\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\Temp\$(SolutionName)\$(ProjectName)\$(Configuration)\</IntDir>
-    
-    
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\spdlog-1.11.0\spdlog-1.11.0\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)thirdparty\spdlog-1.11.0\include</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /Zc:__cplusplus</AdditionalOptions>
-      
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -66,7 +61,6 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <UseFullPaths>false</UseFullPaths>
       <PreprocessorDefinitions>WIN32;_WINDOWS;SPDLOG_COMPILED_LIB</PreprocessorDefinitions>
-      
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;SPDLOG_COMPILED_LIB</PreprocessorDefinitions>
@@ -74,29 +68,23 @@
     </ResourceCompile>
     <Midl>
       <AdditionalIncludeDirectories>D:\spdlog-1.11.0\spdlog-1.11.0\include;</AdditionalIncludeDirectories>
-      
       <HeaderFileName>%(Filename).h</HeaderFileName>
-      
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\Debug\spdlogd.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>libspdlog.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)lib\$(Configuration)\</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      
-      
       <SubSystem>Console</SubSystem>
     </Link>
-    
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\spdlog-1.11.0\spdlog-1.11.0\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)thirdparty\spdlog-1.11.0\include</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /Zc:__cplusplus</AdditionalOptions>
-      
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -105,7 +93,6 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <UseFullPaths>false</UseFullPaths>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SPDLOG_COMPILED_LIB</PreprocessorDefinitions>
-      
       <DebugInformationFormat>
       </DebugInformationFormat>
     </ClCompile>
@@ -115,53 +102,45 @@
     </ResourceCompile>
     <Midl>
       <AdditionalIncludeDirectories>D:\spdlog-1.11.0\spdlog-1.11.0\include;</AdditionalIncludeDirectories>
-      
       <HeaderFileName>%(Filename).h</HeaderFileName>
-      
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\Release\spdlog.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>libspdlog.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)lib\$(Configuration)\</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      
-      
       <SubSystem>Console</SubSystem>
     </Link>
-    
   </ItemDefinitionGroup>
   <ItemGroup>
-    
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="D:\spdlog-1.11.0\spdlog-1.11.0\tests\test_file_helper.cpp" />
-    <ClCompile Include="D:\spdlog-1.11.0\spdlog-1.11.0\tests\test_file_logging.cpp" />
-    <ClCompile Include="D:\spdlog-1.11.0\spdlog-1.11.0\tests\test_daily_logger.cpp" />
-    <ClCompile Include="D:\spdlog-1.11.0\spdlog-1.11.0\tests\test_misc.cpp" />
-    <ClCompile Include="D:\spdlog-1.11.0\spdlog-1.11.0\tests\test_eventlog.cpp" />
-    <ClCompile Include="D:\spdlog-1.11.0\spdlog-1.11.0\tests\test_pattern_formatter.cpp" />
-    <ClCompile Include="D:\spdlog-1.11.0\spdlog-1.11.0\tests\test_async.cpp" />
-    <ClCompile Include="D:\spdlog-1.11.0\spdlog-1.11.0\tests\test_registry.cpp" />
-    <ClCompile Include="D:\spdlog-1.11.0\spdlog-1.11.0\tests\test_macros.cpp" />
-    <ClCompile Include="D:\spdlog-1.11.0\spdlog-1.11.0\tests\utils.cpp" />
-    <ClCompile Include="D:\spdlog-1.11.0\spdlog-1.11.0\tests\main.cpp" />
-    <ClCompile Include="D:\spdlog-1.11.0\spdlog-1.11.0\tests\test_mpmc_q.cpp" />
-    <ClCompile Include="D:\spdlog-1.11.0\spdlog-1.11.0\tests\test_dup_filter.cpp" />
-    <ClCompile Include="D:\spdlog-1.11.0\spdlog-1.11.0\tests\test_fmt_helper.cpp" />
-    <ClCompile Include="D:\spdlog-1.11.0\spdlog-1.11.0\tests\test_stdout_api.cpp" />
-    <ClCompile Include="D:\spdlog-1.11.0\spdlog-1.11.0\tests\test_backtrace.cpp" />
-    <ClCompile Include="D:\spdlog-1.11.0\spdlog-1.11.0\tests\test_create_dir.cpp" />
-    <ClCompile Include="D:\spdlog-1.11.0\spdlog-1.11.0\tests\test_cfg.cpp" />
-    <ClCompile Include="D:\spdlog-1.11.0\spdlog-1.11.0\tests\test_time_point.cpp" />
-    <ClCompile Include="D:\spdlog-1.11.0\spdlog-1.11.0\tests\test_stopwatch.cpp" />
-    <ClCompile Include="D:\spdlog-1.11.0\spdlog-1.11.0\tests\test_errors.cpp" />
+    <ClCompile Include="test_file_helper.cpp" />
+    <ClCompile Include="test_file_logging.cpp" />
+    <ClCompile Include="test_daily_logger.cpp" />
+    <ClCompile Include="test_misc.cpp" />
+    <ClCompile Include="test_eventlog.cpp" />
+    <ClCompile Include="test_pattern_formatter.cpp" />
+    <ClCompile Include="test_async.cpp" />
+    <ClCompile Include="test_registry.cpp" />
+    <ClCompile Include="test_macros.cpp" />
+    <ClCompile Include="utils.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="test_mpmc_q.cpp" />
+    <ClCompile Include="test_dup_filter.cpp" />
+    <ClCompile Include="test_fmt_helper.cpp" />
+    <ClCompile Include="test_stdout_api.cpp" />
+    <ClCompile Include="test_backtrace.cpp" />
+    <ClCompile Include="test_create_dir.cpp" />
+    <ClCompile Include="test_cfg.cpp" />
+    <ClCompile Include="test_time_point.cpp" />
+    <ClCompile Include="test_stopwatch.cpp" />
+    <ClCompile Include="test_errors.cpp" />
   </ItemGroup>
   <ItemGroup>
-    
-    
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
