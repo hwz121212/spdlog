@@ -21,6 +21,7 @@
 #include "utils.h"
 #include <atomic>
 #include <iostream>
+#include <algorithm> 
 #include <memory>
 #include <string>
 #include <thread>
