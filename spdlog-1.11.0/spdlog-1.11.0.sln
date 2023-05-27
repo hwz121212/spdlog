@@ -20,12 +20,26 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "spdlog-utests", "demo\tests
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "async_bench", "demo\bench\async_bench.vcxproj", "{90276405-842C-463E-AB58-0084C93944AB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CF4B9D9C-D39F-3FF3-A1F6-260BADFEAAAA} = {CF4B9D9C-D39F-3FF3-A1F6-260BADFEAAAA}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bench", "demo\bench\bench.vcxproj", "{4589A81F-BA61-4628-B4C5-07B5B5078764}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CF4B9D9C-D39F-3FF3-A1F6-260BADFEAAAA} = {CF4B9D9C-D39F-3FF3-A1F6-260BADFEAAAA}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "formatter-bench", "demo\bench\formatter-bench.vcxproj", "{FA7C0C00-0816-4870-81AF-161C17645BC4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{98282030-F67F-33ED-AE7A-45A1F519D0E8} = {98282030-F67F-33ED-AE7A-45A1F519D0E8}
+		{CF4B9D9C-D39F-3FF3-A1F6-260BADFEAAAA} = {CF4B9D9C-D39F-3FF3-A1F6-260BADFEAAAA}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "latency", "demo\bench\latency.vcxproj", "{CE81BB3E-3E4B-4542-A515-A06BB87B23AE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{98282030-F67F-33ED-AE7A-45A1F519D0E8} = {98282030-F67F-33ED-AE7A-45A1F519D0E8}
+		{CF4B9D9C-D39F-3FF3-A1F6-260BADFEAAAA} = {CF4B9D9C-D39F-3FF3-A1F6-260BADFEAAAA}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libbenchmark", "thirdparty\benchmark-1.7.0\libbenchmark.vcxproj", "{98282030-F67F-33ED-AE7A-45A1F519D0E8}"
 EndProject
